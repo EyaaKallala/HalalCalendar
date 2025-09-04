@@ -12,10 +12,9 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") || "1", 10);
     const searchTerm = searchParams.get("search") || "";
-    const sort = searchParams.get("sort") || "newest"; // 🆕 get sort param
+    const sort = searchParams.get("sort") || "newest"; 
     const pageSize = 4;
 
-    // 🆕 dynamic orderBy based on sort param
     let orderBy;
     switch (sort) {
       case "oldest":
@@ -63,7 +62,7 @@ export async function GET(request: NextRequest) {
         author: { select: { name: true, image: true } },
         _count: { select: { comments: true, likes: true } },
       },
-      orderBy, // ✅ use dynamic sort
+      orderBy, 
       skip: (page - 1) * pageSize,
       take: pageSize,
     });

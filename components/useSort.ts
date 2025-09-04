@@ -11,7 +11,6 @@ export function useSort(defaultSort = "newest") {
   const [sort, setSort] = useState(initialSort);
 
   useEffect(() => {
-    // Sync local sort state with URL query param changes (if user uses back/forward)
     if (searchParams.get("sort") !== sort) {
       setSort(searchParams.get("sort") || defaultSort);
     }

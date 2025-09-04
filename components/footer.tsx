@@ -13,16 +13,14 @@ export default function Footer() {
     >
       <div className="w-full max-w-screen-lg mx-auto p-3 md:py-2">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          {/* Utilise Link au lieu de <a> pour navigation interne */}
           <Link href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            {/* Remplace <img> par <Image> avec largeur et hauteur */}
             <Image
               src="/nobg.png"
               alt="HalalCalendar Logo"
-              width={128}   // ajuste selon ta taille réelle
+              width={128}   
               height={128}
               className="object-contain"
-              priority // optionnel : pour charger rapidement l'image importante
+              priority 
             />
           </Link>
           <ul className="flex flex-wrap justify-center sm:justify-start items-center mb-6 text-sm font-medium text-black dark:text-gray-400 space-x-4">
@@ -32,7 +30,6 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              {/* Pour des liens externes ou ancres, tu peux garder <a> */}
               <a href="#" className="hover:underline">
                 Privacy Policy
               </a>
